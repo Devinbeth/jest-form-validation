@@ -50,7 +50,7 @@ export default class Password extends Component {
                 <p>- a number</p>
                 <TextField
                     onChange={(e) => this.password(e)}
-                    hintText="type your new password"
+                    hintText="Type your new password"
                     floatingLabelText="Password"
                 /><br />
                 <br />

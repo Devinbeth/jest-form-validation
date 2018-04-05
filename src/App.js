@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PeopleList from './components/PeopleList';
-import Form from './components/Form';
-//css
+import Form from './components/Form.js';
+import Password from './components/Password.js';
+// CSS
 import './App.css';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <Form />
         <hr />
-        <PeopleList />
+        <Password />
       </div>
     );
   }
