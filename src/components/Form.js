@@ -1,11 +1,9 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import FlatButton from 'material-ui/FlatButton';
-
+import RaisedButton from 'material-ui/RaisedButton';
 export default class Form extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             firstName: '',
             lastName: '',
@@ -15,24 +13,19 @@ export default class Form extends React.Component {
         this.updateForm = this.updateForm.bind(this);
         this.submitForm = this.submitForm.bind(this);
     }
-
     updateForm(e, category) {
         this.setState({
             [category]: e.target.value 
         })
     }
-
     ageCheck(age) {
-        age = +age;
-        if(typeof age !== 'number' || age > 110 || age < 18) return false;
-        return true;
+        // complete this method
+        // age should be at least 18 and probably not older than 108
     }
     emailCheck(email) {
-        let symbolIndex = email.indexOf('@');
-        if (symbolIndex === -1) return false;
-        return true;
+        // complete this method
+        // check at least for the '@' symbol
     }
-
     submitForm(e) {
         e.preventDefault();
         let {email, age} = this.state;
@@ -42,10 +35,9 @@ export default class Form extends React.Component {
             alert('Problem with email and/or age.')
         }
     }
-
     render() {
         return (
-            <div style={{margin: 12}}>
+            <div style={{margin: 20}}>
                 <h4>Please sign up:</h4>
                 <form onSubmit={this.submitForm}>
                 <TextField
@@ -68,7 +60,7 @@ export default class Form extends React.Component {
                     hintText="type your email address"
                     floatingLabelText="Email"
                 /><br />
-                <FlatButton type='submit' label="Sign up" primary={true} />
+                <RaisedButton type='submit' label="Sign up" primary={true} />
                 </form> 
             </div> 
         )
